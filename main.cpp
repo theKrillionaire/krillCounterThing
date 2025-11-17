@@ -21,11 +21,13 @@ int main(int argc, char **argv) {
 	else if (argc > 2) { printf("too many args!"); return 1; }
 	int i = 0;
 	int instruction = 0;
-	while(i <= 15 & i > 0) {
+	while(i <= 15 & i > -1) {
 		if (in[instruction] == '+') out[i]++;
 		else if (in[instruction] == '-') out[i]--;
 		else if(in[instruction] == '>') i++;
 		else if(in[instruction] == '<') i--;
+		else if(in[instruction] == '?') out[i] *= -1;
+		else if(in[instruction] == '!') out[i] *= 2;
 		else break;
 		instruction++;
 	}
