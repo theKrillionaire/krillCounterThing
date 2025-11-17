@@ -7,7 +7,6 @@
 std::string input;
 char in[256];
 int out[16] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
-int running = 0;
 
 int main(int argc, char **argv) {
 	if (argc == 2) {
