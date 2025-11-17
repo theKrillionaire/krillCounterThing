@@ -11,31 +11,28 @@ int running = 0;
 
 int main(int argc, char **argv) {
 	if (argc == 2) {
-		running = 1;
 		std::ifstream file(argv[1]);
 		if (file.is_open()) {
 				std::getline(file,input);
 				std::strncpy(in, input.c_str(), sizeof(in));
 				in[255] = '\0';
 		}
-	} else if (argc < 2) printf("too few args!");
-	else if (argc > 2) printf("too many args!");
-	if(running) {
-		int i = 0;
-		int instruction = 0;
-		while(i <= 15) {
-			if (in[instruction] == '+') out[i]++;
-			else if (in[instruction] == '-') out[i]--;
-			else if(in[instruction] == '>') i++;
-			else if(in[instruction] == '<') i--;
-			else break;
-			instruction++;
-		}
-		int o = 0;
-		while(o < 16) {
-			printf("%i", out[o]);
-			o++;
-		}
+	} else if (argc < 2) { printf("too few args!"); return 1;}
+	else if (argc > 2) { printf("too many args!"); return 1; }
+	int i = 0;
+	int instruction = 0;
+	while(i <= 15 & i > 0) {
+		if (in[instruction] == '+') out[i]++;
+		else if (in[instruction] == '-') out[i]--;
+		else if(in[instruction] == '>') i++;
+		else if(in[instruction] == '<') i--;
+		else break;
+		instruction++;
+	}
+	int o = 0;
+	while(o < 16) {
+		printf("%i", out[o]);
+		o++;
 	}
 	printf("\n");
 	return 0;
