@@ -9,6 +9,7 @@ char in[256];
 int out[16] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 int main(int argc, char **argv) {
+	printf("\n\n");
 	if (argc == 2) {
 		std::ifstream file(argv[1]);
 		if (file.is_open()) {
@@ -31,10 +32,11 @@ int main(int argc, char **argv) {
 		instruction++;
 	}
 	int o = 0;
-	while(o < 16) {
-		printf("%i", out[o]);
+	while(o < 15) {
+		printf("%i | ", out[o]);
 		o++;
 	}
-	printf("\n");
+	printf("%i", out[o]);
+	printf("\n\n\n");
 	return 0;
 }
