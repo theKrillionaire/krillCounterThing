@@ -5,7 +5,8 @@
 #include <cstring>
 #include <sstream>
 
-int out[16] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+constexpr std::size_t size = 16;
+int out[size] = {0};
 
 std::string readEntireFile(std::ifstream& file) {
 	std::stringstream buffer;
