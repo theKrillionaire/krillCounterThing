@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <unistd.h>
+
+#include <array>
 #include <cstring>
 #include <fstream>
 #include <sstream>
 #include <string>
 
 constexpr std::size_t size = 16;
-int out[size] = {0};
+std::array<int, size> out = {0};
 
 std::string readEntireFile(std::ifstream& file) {
     std::stringstream buffer;
